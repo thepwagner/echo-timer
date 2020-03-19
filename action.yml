@@ -1,0 +1,5 @@
+name: 'Echo Timer'
+description: 'Echo issue comments back, measure latency'
+runs:
+  using: 'node12'
+  main: 'dist/index.js'
