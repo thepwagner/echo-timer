@@ -13,6 +13,9 @@ async function run() {
   const runnerID = core.getInput('id');
   const { comment, issue, repository } = github.context.payload;
   const eventTime = Date.parse(comment.created_at);
+  if (comment.body.match(/```/)) {
+    return;
+  }
 
   // Reply
   const timeToStart = startTime - eventTime;
