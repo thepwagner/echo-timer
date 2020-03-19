@@ -1,0 +1,11 @@
+on: [issue_comment]
+jobs:
+  echo-timer:
+    name: Cloud Echo Timer
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Echo timer
+        uses: ./
+
