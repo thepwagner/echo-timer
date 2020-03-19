@@ -11,4 +11,5 @@ jobs:
       - name: Echo timer
         uses: ./
         with:
+          id: Cloud
           token: ${{ secrets.GITHUB_TOKEN }}

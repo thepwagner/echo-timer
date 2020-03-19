@@ -10,12 +10,14 @@ async function run() {
   const octokit = new github.GitHub(token);
 
   // Unpack event:
+  const runnerID = core.getInput('id');
   const { comment, issue, repository } = github.context.payload;
   const eventTime = Date.parse(comment.created_at);
 
   // Reply
   const timeToStart = startTime - eventTime;
   const timing = `
+**Runner:** ${runnerID}
 **Start Execution:** ${timeToStart} ms
 **Process Uptime:** ${process.uptime() * 1000} ms
 **Instance Uptime:** ${os.uptime() * 1000} ms
