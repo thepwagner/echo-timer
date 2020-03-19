@@ -1,4 +1,6 @@
-on: [issue_comment]
+on:
+  issue_comment:
+    types: created
 jobs:
   echo-timer:
     name: Cloud Echo Timer
@@ -8,4 +10,5 @@ jobs:
         uses: actions/checkout@v2
       - name: Echo timer
         uses: ./
-
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}

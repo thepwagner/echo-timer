@@ -1,5 +1,9 @@
 name: 'Echo Timer'
 description: 'Echo issue comments back, measure latency'
+inputs:
+  token:
+    description: 'GITHUB_TOKEN'
+    required: true
 runs:
   using: 'node12'
   main: 'dist/index.js'
